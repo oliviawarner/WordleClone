@@ -11,16 +11,17 @@ on:
 jobs:
   build-and-test:
     runs-on: macos-latest
+
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Set up Xcode 16.2
-        run: sudo xcode-select -switch /Applications/Xcode_16.2.app/Contents/Developer
+    - name: Set up Xcode 16.2
+      run: sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
 
-      - name: Build and run logical unit tests
-        run: |
-          xcodebuild test \
-            -scheme "wordle-dupe" \
-            -destination "platform=iOS Simulator,name=iPhone 14,OS=latest" \
-            -enableCodeCoverage YES
+    - name: Build and run logical unit tests
+      run: |
+        xcodebuild test \
+          -scheme "wordle-dupe" \
+          -destination "platform=iOS Simulator,name=iPhone 14,OS=latest" \
+          -enableCodeCoverage YES
