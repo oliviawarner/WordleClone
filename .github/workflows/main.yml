@@ -1,0 +1,36 @@
+name: iOS Logical Tests CI
+
+on:
+  push:
+    branches:
+      - initial
+  pull_request:
+    branches:
+      - initial
+
+jobs:
+  build-and-test:
+    runs-on: macos-latest
+
+    steps:
+    # Checkout the repository
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Set up Xcode environment
+    - name: Set up Xcode
+      run: |
+        sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
+        xcodebuild -version
+
+    # Install dependencies (if using Swift Package Manager or CocoaPods)
+    - name: Install dependencies
+      run: swift package resolve
+
+    # Build and test the app
+    - name: Build and run logical unit tests
+      run: |
+        xcodebuild test \
+          -scheme "wordle-dupe" \
+          -destination "platform=iOS Simulator,name=iPhone 14,OS=latest" \
+          -enableCodeCoverage YES
