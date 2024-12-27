@@ -23,10 +23,6 @@ jobs:
         sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
         xcodebuild -version
 
-    # Install dependencies (if using Swift Package Manager or CocoaPods)
-    - name: Install dependencies
-      run: swift package resolve
-
     # Build and test the app
     - name: Build and run logical unit tests
       run: |
