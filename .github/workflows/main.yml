@@ -3,10 +3,10 @@ name: iOS Logical Tests CI
 on:
   push:
     branches:
-      - initial
+      - main
   pull_request:
     branches:
-      - initial
+      - main
 
 jobs:
   build-and-test:
