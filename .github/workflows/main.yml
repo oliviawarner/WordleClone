@@ -34,3 +34,7 @@ jobs:
           -destination "platform=iOS Simulator" \
           -enableCodeCoverage YES \
           -resultBundlePath ./TestResults.xcresult
+    
+    - name: Extract Coverage Summary
+      run: |
+        xcrun xccov view --report ./TestResults.xcresult
