@@ -33,9 +33,4 @@ jobs:
           -showdestinations \
           -destination "platform=iOS Simulator" \
           -enableCodeCoverage YES
-    
-    - name: Extract Detailed Coverage
-      run: |
-        RESULT_BUNDLE=$(find /var/folders -name "*.xcresult" | head -n 1)
-        echo "Detailed Coverage Results:"
-        xcrun xccov view --file "$RESULT_BUNDLE"
+          -resultBundlePath ./TestResults.xcresult
