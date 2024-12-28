@@ -35,6 +35,11 @@ jobs:
           -enableCodeCoverage YES \
           -resultBundlePath ./TestResults.xcresult \
           -verbose
+
+    - name: Debug Test Results Directory
+      run: |
+        echo "Listing contents of TestResults directory:"
+        ls -lh /Users/runner/work/WordleClone/WordleClone
     
     - name: Upload Test Results
       uses: actions/upload-artifact@v3
