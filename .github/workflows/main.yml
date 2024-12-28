@@ -34,8 +34,11 @@ jobs:
           -destination "platform=iOS Simulator" \
           -enableCodeCoverage YES \
           -resultBundlePath ./TestResults.xcresult
+          -verbose
     
-    - name: Extract and Display Test Results
-      run: |
-        echo "Extracting test results from .xcresult bundle..."
-        xcrun xccov view --file ./TestResults.xcresult
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v3
+      with:
+        name: TestResults
+        path: ./TestResults.xcresult
+
