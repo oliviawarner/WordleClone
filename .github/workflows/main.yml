@@ -33,7 +33,7 @@ jobs:
           -showdestinations \
           -destination "platform=iOS Simulator" \
           -enableCodeCoverage YES \
-          -resultBundlePath ./TestResults.xcresult
+          -resultBundlePath ./TestResults.xcresult \
           -verbose
     
     - name: Upload Test Results
