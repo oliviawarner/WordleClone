@@ -33,3 +33,14 @@ jobs:
           -showdestinations \
           -destination "platform=iOS Simulator" \
           -enableCodeCoverage YES
+
+    - name: Save Coverage Results
+      run: |
+        mkdir -p coverage
+        RESULT_BUNDLE=$(find /var/folders -name "*.xcresult" | head -n 1)
+        xcrun xccov view --report "$RESULT_BUNDLE" > coverage/summary.txt
+        xcrun xccov view --file "$RESULT_BUNDLE" > coverage/detailed.txt
+        artifacts:
+          paths:
+            - coverage/summary.txt
+            - coverage/detailed.txt
