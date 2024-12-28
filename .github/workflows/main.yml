@@ -21,6 +21,9 @@ jobs:
 
     - name: Debug Verify Xcode version
       run: xcodebuild -version
+      
+    - name: Debug List available Xcode versions
+      run: ls /Applications/
 
     - name: Build and test the project
       run: |
