@@ -25,29 +25,10 @@ jobs:
     - name: Verify Xcode build version
       run: xcodebuild -version
 
-    - name: Build and test the project
+    - name: Build the project
       run: |
         xcodebuild test \
           -project "wordle-dupe.xcodeproj" \
           -scheme "wordle-dupe" \
           -showdestinations \
           -destination "platform=iOS Simulator" \
-          -resultBundlePath "$GITHUB_WORKSPACE/TestResults.xcresult" \
-          -verbose
-
-    - name: Search for .xcresult Files
-      run: |
-        echo "Searching for .xcresult files across the file system:"
-        find / -name "*.xcresult" 2>/dev/null || echo "No .xcresult files found"
-        
-    - name: Debug Test Results Directory
-      run: |
-        echo "Listing contents of TestResults directory:"
-        ls -lh /Users/runner/work/WordleClone/WordleClone
-    
-    - name: Upload Test Results
-      uses: actions/upload-artifact@v3
-      with:
-        name: TestResults
-        path: ./TestResults.xcresult
-
