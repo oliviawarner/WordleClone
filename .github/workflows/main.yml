@@ -32,7 +32,6 @@ jobs:
           -scheme "wordle-dupe" \
           -showdestinations \
           -destination "platform=iOS Simulator" \
-          -enableCodeCoverage YES \
           -resultBundlePath ./TestResults.xcresult \
           -verbose
 
