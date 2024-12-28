@@ -7,13 +7,13 @@ This project demonstrates clean app architecture, logical unit testing, and CI/C
 ## Features
 
 - 🎯 Guess a 5-letter word within six attempts.
-- 🟩 Feedback using color indicators:
-  - **Green**: Correct letter in the correct position.
-  - **Yellow**: Correct letter in the wrong position.
-  - **Gray**: Incorrect letter.
+- Feedback using color indicators:
+  - 🟩 **Green**: Correct letter in the correct position.
+  - 🟨 **Yellow**: Correct letter in the wrong position.
+  - ⬜ **Gray**: Incorrect letter.
 - 🔄 Reset functionality for a new game.
 - ✅ Unit tests for game logic.
-- 🚀 Continuous Integration (CI) pipeline for building and testing.
+- 🚀 Continuous Integration (CI) pipeline for building.
 
 ---
 
