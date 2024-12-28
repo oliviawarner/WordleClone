@@ -35,6 +35,7 @@ jobs:
           -enableCodeCoverage YES \
           -resultBundlePath ./TestResults.xcresult
     
-    - name: Extract Coverage Summary
+    - name: Extract and Display Test Results
       run: |
+        echo "Extracting test results from .xcresult bundle..."
         xcrun xccov view --report ./TestResults.xcresult
