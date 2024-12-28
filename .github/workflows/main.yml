@@ -32,7 +32,7 @@ jobs:
           -scheme "wordle-dupe" \
           -showdestinations \
           -destination "platform=iOS Simulator" \
-          -resultBundlePath ./TestResults.xcresult \
+          -resultBundlePath "$GITHUB_WORKSPACE/TestResults.xcresult"
           -verbose
 
     - name: Debug Test Results Directory
