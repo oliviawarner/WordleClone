@@ -38,4 +38,4 @@ jobs:
     - name: Extract and Display Test Results
       run: |
         echo "Extracting test results from .xcresult bundle..."
-        xcrun xccov view --report ./TestResults.xcresult
+        xcrun xccov view --file ./TestResults.xcresult
